@@ -3,23 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Color Picker</title>
+    <script type="text/javascript" src="color-picker.js"></script>
   </head>
   <body>
-    <div style="width:100px; height:100px; border:1px solid black;" id="color"></div>
-    <input type="range" min="0" max="255" id="slider" value="0"/><span id="value"></span>
+
 
     <script type="text/javascript">
-      const slider = document.getElementById('slider');
-      const label = document.getElementById('value');
-      const colorBox = document.getElementById('color');
+      const colorPicker = createColorPicker();
+      document.body.appendChild(colorPicker.node);
 
-      const update = () =>{
-        colorBox.style.background = `rgb(${slider.value}, 0, 0)`;
-        label.innerHTML = slider.value;
-      };
-
-      slider.oninput = update;
-      update();
     </script>
 
   </body>
