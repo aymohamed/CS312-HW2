@@ -19,7 +19,22 @@ annually.</p>
      <p> </p>
     <script type="text/javascript">
       const colorPicker = createColorPicker();
-      document.body.appendChild(colorPicker.node);
+      let myButtn = document.createElement("BUTTON");
+      let displayer = document.createTextNode("Show Color Picker");
+      let hider = document.createTextNode("Hide Color Picker");
+      myButtn.appendChild(displayer);
+      document.body.appendChild(myButtn);
+      //document.body.appendChild(colorPicker.node);
+      myButton.onclick = (evt) =>{
+          if(myButton.value==0){
+              document.body.appendChild(colorPicker.node);
+              myButton.value==0;
+              myButton.removeChild(displayer);
+               myButton.removeChild(hider);
+
+
+          }
+      }
 
     </script>
 
