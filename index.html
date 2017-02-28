@@ -18,18 +18,18 @@ annually.</p>
 
     <script type="text/javascript">
       const colorPicker = createColorPicker();
-      let myButtn = document.createElement("BUTTON");
-      myButtn.value = "visible";
-      let displayer = document.createTextNode("Show Color Picker");
-      let hider = document.createTextNode("Hide Color Picker");
-      myButtn.appendChild(displayer);
-      document.body.appendChild(myButtn);
+      let myButtn = document.createElement("BUTTON"); //creates a new button
+      myButtn.value = "visible"; //sets the button value to "visible"
+      let displayer = document.createTextNode("Show Color Picker"); //adds "Show Color Picker" to the button
+      let hider = document.createTextNode("Hide Color Picker"); //adds "Hide Color Picker" to the button
+      myButtn.appendChild(displayer); //adds the text stored in displayer to the button
+      document.body.appendChild(myButtn); //adds button to the body of the document
       myButtn.onclick = (myFunc) =>{
           if(myButtn.value==="visible"){
-              document.body.appendChild(colorPicker.node);
-              myButtn.value = "invisible";
-              myButtn.removeChild(displayer);
-              myButtn.appendChild(hider);
+              document.body.appendChild(colorPicker.node); //adds colorPicker to the body of the document
+              myButtn.value = "invisible"; //sets the button value to "invisible"
+              myButtn.removeChild(displayer); //removes "Show Color Picker" to the button
+              myButtn.appendChild(hider); //adds "Hide Color Picker" to the button
           }
           else{
                document.body.removeChild(colorPicker.node);
@@ -39,6 +39,10 @@ annually.</p>
            }
           colorPicker.oninput = (myFunc)=>{
               document.getElementById('Horn').style.color = `rgb(${colorPicker.red},${colorPicker.green},${colorPicker.blue})`;
+              /*
+              When the color picker is visible, changing its color changes the color of the text
+              in the paragraph
+              */
           }
       }
     </script>
