@@ -7,11 +7,13 @@ const createSlider = function(){
 
 
       const block = document.createElement('div');
-
       const range = document.createElement('input');
       range.type="range";
       range.min = 0;
       range.max = 255;
+      range.style.width= "300px";
+      range.style.border = "thin dotted blue";
+      range.style.margin = "5px";
       range.value = slider.value;
       block.appendChild(range);
 
@@ -42,9 +44,12 @@ const createColorPicker = function(){
   const block = document.createElement("div");
 
   const colorBox = document.createElement("div");
-  colorBox.style.width="100px";
-  colorBox.style.height = "100px";
-  colorBox.style.border = " 1px solid black";
+  colorBox.style.width="200px";
+  colorBox.style.height = "200px";
+  colorBox.style.border = "thick dotted green";
+  colorBox.style.margin = "47px";
+  colorBox.style.padding = "1px";
+
   block.appendChild(colorBox);
 
 
