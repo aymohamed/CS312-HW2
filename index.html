@@ -7,11 +7,11 @@
   </head>
   <body>
 
-     <p>My name is Abdi and I am a native of the Horn of Africa.
+     <p id="Horn">My name is Abdi and I am a native of the Horn of Africa.
          <br>
      The Horn of Africa is the peninsula in NorthEast Africa and <br>
-     it consists of Ethiopia, Kenya , Djibouti, Somalia and Eritrea.</p>
-    <p>The Horn of Africa is popular for its spicy cuisines, diverse cultures <br>
+     it consists of Ethiopia, Kenya , Djibouti, Somalia and Eritrea. <br>
+     The Horn of Africa is popular for its spicy cuisines, diverse cultures <br>
     and its geopolitical strategy.The Gulf of Aden located in the Horn <br> is one of
     the busiest waterways in the world with close to 21,000 ships <br> crossing
 annually.</p>
@@ -19,12 +19,31 @@ annually.</p>
      <p> </p>
     <script type="text/javascript">
       const colorPicker = createColorPicker();
-      //document.body.appendChild(colorPicker.node);
+      document.body.appendChild(colorPicker.node);
       let myButtn = document.createElement("BUTTON");
+      myButtn.value = 0;
       let displayer = document.createTextNode("Show Color Picker");
       let hider = document.createTextNode("Hide Color Picker");
       myButtn.appendChild(displayer);
       document.body.appendChild(myButtn);
+      myButton.onclick = (myFunc) =>{
+          if(myButton.value==0){
+              document.body.appendChild(colorPicker.node);
+              myButton.value=1;
+              myButton.removeChild(displayer);
+              myButton.removeChild(hider);
+
+
+          } else{
+               document.body.removeChild(colorPicker.node);
+               myButton.value=1;
+               myButton.removeChild(hider);
+               myButton.appendChild(displayer);
+           }
+          colorPicker.oninput = (myFunc)=>{
+              document.getElementById('Horn').style.color = `rgb(${colorPicker.red},${colorPicker.green},${colorPicker.blue})`;
+          }
+      }
     </script>
 
   </body>
