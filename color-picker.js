@@ -13,7 +13,7 @@ const createSlider = function(){
       range.max = 255;
       range.style.width= "300px"; //sets width of range to 300 pixels
       range.style.border = "thin dotted blue"; //border is thin-dotted and blue
-      range.style.margin = "15px";
+      range.style.margin = "15px"; //sets margin to 15 pixels
       range.style.background = "mintcream"; //sets background color of range to mintcream
       range.value = slider.value;
       block.appendChild(range);
